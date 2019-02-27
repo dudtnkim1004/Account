@@ -10,8 +10,8 @@
 <body>
 	<h1>회원가입</h1>
 	<form action="insertAccountOwner" method="post">
-	ID : <input type="text" name="id">
-	PW : <input type="password" name="pw">
+	ID : <input type="text" name="id"><br>
+	PW : <input type="password" name="pw"><br>
 	<input type="submit" value="회원가입">
 	</form>
 

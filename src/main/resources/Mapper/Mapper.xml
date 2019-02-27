@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="global.sesoc.account.DAO.AccountMapper">
+
+	<insert id = "insertAccountOwner" parameterType = "AccountOwner">
+	INSERT INTO ACCOUNTOWNER(
+	ID
+	,PW
+	)
+	VALUES(
+	#{id}
+	,#{pw}
+	)	
+	</insert>
+
+	<select id = "selectAccountOwner" parameterType = "AccountOwner" resultType = "AccountOwner">
+	SELECT * FROM 
+	ACCOUNTOWNER 
+	WHERE 
+	Id = #{id} 
+	and 
+	PW = #{pw}
+	</select>
+	
+	<insert id="inputaccountbook" parameterType="AccountBook">
+	INSERT INTO ACCOUNTBOOK(
+		ACCOUNTSEQ,
+		ID,
+		TITLE,
+		CONTENT,
+		FLAG,
+		AMOUNT,
+		EVENTDATE,
+		INDATE
+	)
+	VALUES(
+		accountseq.nextval,
+		#{id},
+		#{title},
+		#{content},
+		#{flag},
+		#{amount},
+		#{eventdate},
+		sysdate
+	)
+	</insert>
+	
+ 	<select id="selectAllaccountbook" resultType="AccountBook" parameterType="String"> <!--String은 왜써주는건가요? -->
+	SELECT
+		ACCOUNTSEQ	
+			,ID
+			,TITLE
+			,CONTENT
+			,FLAG	
+			,AMOUNT
+			,EVENTDATE
+			,INDATE
+	FROM 
+		ACCOUNTBOOK
+	WHERE
+		ID=#{id}	
+	</select>
+	
+</mapper>

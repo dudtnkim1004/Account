@@ -5,8 +5,9 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="global.sesoc.account.VO.AccountOwner" alias="AccountOwner" />
+		<typeAlias type="global.sesoc.account.VO.AccountBook" alias="AccountBook" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="Mapper/AccountOwnerMapper.xml" />
+		<mapper resource="Mapper/Mapper.xml" />
 	</mappers>
 </configuration>
